@@ -33,7 +33,7 @@ channel = grpc.insecure_channel(f"localhost:{port}")
 client_stub = inference_service.stub_class(channel)
 
 # Run inference for two sample prompts
-for text in ["Luckily the earth keeps spinning", "A thousand gods is heavy, waking up and looking for direction"]:
+for text in ["Luckily the earth keeps spinning", "Please gods is heavy, waking up and looking for direction"]:
    input_text_proto = TextInput(text=text).to_proto()
    request = inference_service.messages.HuggingFaceSentimentTaskRequest(
       text_input=input_text_proto
